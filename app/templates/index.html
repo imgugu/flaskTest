@@ -8,7 +8,7 @@
     {% endif %}
   </head>
   <body>
-    <h1>Hello, {{ user.nickname }}!</h1>
+    <h1>Hello, {{ user.nickname }}。</h1>
     <h4>I have {{ friends.__len__ }} friends.</h4>
     {% for friend in friends %}
     <p>{{ friend.name }}------{{ friend.sex }}</p>
