@@ -9,9 +9,16 @@
   </head>
   <body>
     <h1>Hello, {{ user.nickname }}。</h1>
-    <h4>I have {{ friends.__len__ }} friends.</h4>
-    {% for friend in friends %}
-    <p>{{ friend.name }}------{{ friend.sex }}</p>
-    {% endfor %}
+    <h4>I have {{ friends|length }} friends.</h4>
+    {%- for friend in friends %}
+    <p class="{{ loop.cycle('odd', 'even') }}">{{ friend.name }}------{{ friend.sex }}</p>
+    {%- endfor %}
+
+    <div>
+        <form action="{{ url_for("index") }}" method="post">
+            <input type="hidden" id="xx" name="xx" value="32429347">
+            <input type="submit" value="submit"/>
+        </form>
+    </div>
   </body>
 </html>
